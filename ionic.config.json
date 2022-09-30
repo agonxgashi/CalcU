@@ -1,0 +1,7 @@
+{
+  "name": "Static Calculator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

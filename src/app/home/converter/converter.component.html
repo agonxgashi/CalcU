@@ -1,0 +1,10 @@
+<ion-card *ngIf="converter" >
+  <ion-card-header>
+    <ion-card-subtitle> {{ converter.title }} </ion-card-subtitle>
+    <ion-card-title> {{ result }} </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{ converter.formula }}
+  </ion-card-content>
+</ion-card>

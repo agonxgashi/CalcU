@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="close()">Cancel</ion-button>
+    </ion-buttons>
+    <!-- <ion-title>Welcome</ion-title> -->
+    <ion-buttons slot="end">
+      <ion-button (click)="save()">Confirm</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="converter" class="ion-padding">
+  <ion-item>
+    <ion-label position="stacked">Title</ion-label>
+    <ion-input [(ngModel)]="converter.title" placeholder="Title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Formula</ion-label>
+    <ion-input [(ngModel)]="converter.formula" placeholder="Formula"></ion-input>
+  </ion-item>
+
+  <br>
+  <h4> Real-Time formula evaluation (x = 2) </h4>
+  <app-converter [converter]="converter" [input]="2"></app-converter>
+  <br>
+
+</ion-content>
+
+<ion-footer *ngIf="isEdit" class="ion-no-border ion-padding">
+  <ion-button color="danger" mode="ios" expand="block" fill="outline" (click)="delete()">Delete</ion-button>
+</ion-footer>

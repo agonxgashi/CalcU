@@ -1,0 +1,125 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Static Calculator
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button autoHide="false" (click)="openSettings(null)">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ng-container *ngFor="let c of converters">
+      <app-converter [converter]="c" [input]="input" (click)="openSettings(c.id)"></app-converter>
+    </ng-container>
+  </div>
+</ion-content>
+
+
+<ion-footer id="footer" class="ion-no-border">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h3 style="text-align: center;"> {{input || '-'}} </h3>
+      </ion-col>
+    </ion-row>
+
+    <!-- 1,2,3 -->
+    <ion-row>
+      <ion-col>
+        <button class="ion-activatable ripple-parent input-button" (click)="registerInput('1')">
+          1
+          <ion-ripple-effect></ion-ripple-effect>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button class="ion-activatable ripple-parent input-button" (click)="registerInput('2')">
+          2
+          <ion-ripple-effect></ion-ripple-effect>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button class="ion-activatable ripple-parent input-button" (click)="registerInput('3')">
+          3
+          <ion-ripple-effect></ion-ripple-effect>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <!-- 4,5,6 -->
+    <ion-row>
+      <ion-col>
+        <button class="ion-activatable ripple-parent input-button" (click)="registerInput('4')">
+          4
+          <ion-ripple-effect></ion-ripple-effect>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button class="ion-activatable ripple-parent input-button" (click)="registerInput('5')">
+          5
+          <ion-ripple-effect></ion-ripple-effect>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button class="ion-activatable ripple-parent input-button" (click)="registerInput('6')">
+          6
+          <ion-ripple-effect></ion-ripple-effect>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <!-- 7,8,9 -->
+    <ion-row>
+      <ion-col>
+        <button class="ion-activatable ripple-parent input-button" (click)="registerInput('7')">
+          7
+          <ion-ripple-effect></ion-ripple-effect>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button class="ion-activatable ripple-parent input-button" (click)="registerInput('8')">
+          8
+          <ion-ripple-effect></ion-ripple-effect>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button class="ion-activatable ripple-parent input-button" (click)="registerInput('9')">
+          9
+          <ion-ripple-effect></ion-ripple-effect>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <!-- .,0,backspace -->
+    <ion-row>
+      <ion-col>
+        <button class="ion-activatable ripple-parent input-button" (click)="registerInput('.')">
+          .
+          <ion-ripple-effect></ion-ripple-effect>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button class="ion-activatable ripple-parent input-button" (click)="registerInput('0')">
+          0
+          <ion-ripple-effect></ion-ripple-effect>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button class="ion-activatable ripple-parent input-button" (click)="clear()">
+          <ion-icon name="backspace-outline"></ion-icon>
+          <ion-ripple-effect></ion-ripple-effect>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

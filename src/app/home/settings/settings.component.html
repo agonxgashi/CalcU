@@ -4,7 +4,7 @@
       <ion-button color="medium" (click)="close()">Cancel</ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button (click)="save()">Confirm</ion-button>
+      <ion-button (click)="save()">Save</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -19,7 +19,7 @@
   </ion-item>
 
   <br>
-  <h4> Real-Time formula evaluation (x = 2) </h4>
+  <h4> Formula evaluation (x = 2)</h4>
   <app-converter [converter]="converter" [input]="2"></app-converter>
   <br>
 

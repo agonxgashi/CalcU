@@ -1,6 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "Static Calculator",
+	"appId": "com.agonxgashi.calcu",
+	"appName": "CalcU",
 	"webDir": "www",
 	"bundledWebRuntime": false
 }

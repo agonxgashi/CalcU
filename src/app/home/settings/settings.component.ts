@@ -43,7 +43,6 @@ export class SettingsComponent implements OnInit {
   }
 
   private processData(id: string) {
-    console.log(id);
     if (id) {
       const converters = this.conerterService.getFormulas();
       this.converter = converters.find(c => c.id === id);
